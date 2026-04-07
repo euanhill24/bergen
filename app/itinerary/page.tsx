@@ -6,7 +6,7 @@ import { LocationDetailSheet } from "@/components/location-detail-sheet";
 import { tripDays, type DayId } from "@/lib/constants";
 import { getEventsByDay } from "@/data/itinerary";
 import { getLocationById, type Location } from "@/data/locations";
-import { PartyPopper } from "lucide-react";
+import { PartyPopper, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function ItineraryPage() {
@@ -98,9 +98,19 @@ export default function ItineraryPage() {
                 )}
                 <CategoryBadge category={event.category} />
               </div>
-              {event.isHighlight && (
-                <PartyPopper className="h-4 w-4 text-amber-500 shrink-0" />
-              )}
+              <div className="flex items-center gap-1.5 shrink-0">
+                {event.isMandatory && (
+                  <>
+                    <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    <span className="text-xs font-medium text-amber-600">
+                      Mum &amp; Dad&apos;s treat
+                    </span>
+                  </>
+                )}
+                {event.isHighlight && !event.isMandatory && (
+                  <PartyPopper className="h-4 w-4 text-amber-500" />
+                )}
+              </div>
             </div>
 
             <h3 className="font-medium text-sm">{event.title}</h3>
@@ -111,6 +121,18 @@ export default function ItineraryPage() {
               <p className="text-xs text-muted-foreground/70 mt-2 italic">
                 e.g. {event.example}
               </p>
+            )}
+            {event.choices && (
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {event.choices.map((choice) => (
+                  <span
+                    key={choice}
+                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-muted text-muted-foreground border border-border"
+                  >
+                    {choice}
+                  </span>
+                ))}
+              </div>
             )}
           </div>
         ))}

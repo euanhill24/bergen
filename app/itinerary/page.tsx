@@ -32,8 +32,10 @@ export default function ItineraryPage() {
     <div className="max-w-3xl mx-auto px-4 py-8">
       <div className="text-center mb-10">
         <h1 className="text-3xl font-light tracking-tight mb-2">Itinerary</h1>
-        <p className="text-sm text-muted-foreground">
-          A rough outline — we&apos;ll fill in the details together
+        <p className="text-sm text-muted-foreground">A rough outline</p>
+        <p className="text-xs text-muted-foreground/70 mt-1">
+          <Star className="inline h-3 w-3 fill-amber-400 text-amber-400 mr-1" />
+          Starred events are the big ones — don&apos;t miss these
         </p>
       </div>
 
@@ -99,15 +101,15 @@ export default function ItineraryPage() {
                 <CategoryBadge category={event.category} />
               </div>
               <div className="flex items-center gap-1.5 shrink-0">
-                {event.isMandatory && (
+                {event.treatLabel && (
                   <>
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                     <span className="text-xs font-medium text-amber-600">
-                      Mum &amp; Dad&apos;s treat
+                      {event.treatLabel}
                     </span>
                   </>
                 )}
-                {event.isHighlight && !event.isMandatory && (
+                {event.isHighlight && !event.treatLabel && (
                   <PartyPopper className="h-4 w-4 text-amber-500" />
                 )}
               </div>
@@ -121,18 +123,6 @@ export default function ItineraryPage() {
               <p className="text-xs text-muted-foreground/70 mt-2 italic">
                 e.g. {event.example}
               </p>
-            )}
-            {event.choices && (
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {event.choices.map((choice) => (
-                  <span
-                    key={choice}
-                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-muted text-muted-foreground border border-border"
-                  >
-                    {choice}
-                  </span>
-                ))}
-              </div>
             )}
           </div>
         ))}

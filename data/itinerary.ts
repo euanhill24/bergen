@@ -10,8 +10,7 @@ export interface ItineraryEvent {
   locationId?: string;
   category: Category;
   isHighlight?: boolean;
-  isMandatory?: boolean;
-  choices?: string[];
+  treatLabel?: string;
 }
 
 export const itinerary: ItineraryEvent[] = [
@@ -39,18 +38,18 @@ export const itinerary: ItineraryEvent[] = [
     day: "thu",
     time: "Evening",
     title: "Cook together at the house",
-    description: "First night in — pick up groceries and cook a meal together. Chill vibes.",
+    description: "First night in — pick up groceries and cook a meal together. Chill vibes. You and Kate will cook together on the first night.",
     locationId: "airbnb",
     category: "accommodation",
   },
 
-  // Friday — Explore & Funicular
+  // Friday — Explore & Birthday
   {
     id: "fri-1",
     day: "fri",
     time: "Morning",
     title: "Coffee",
-    description: "Find a cosy spot for morning coffee",
+    description: "Make coffee at home or find a coffee spot in town",
     example: "Kaffemisjonen, Det Lille Kaffekompaniet, or Godt Brød",
     category: "coffee",
   },
@@ -68,10 +67,9 @@ export const itinerary: ItineraryEvent[] = [
     day: "fri",
     time: "Lunchtime",
     title: "Lunch",
-    description: "Grab lunch somewhere in the city",
+    description: "Make something at home or head out",
     example: "Fish Market, Pingvinen, or Bryggeloftet",
     category: "lunch",
-    choices: ["Make something at home", "Head out"],
   },
   {
     id: "fri-4",
@@ -90,7 +88,7 @@ export const itinerary: ItineraryEvent[] = [
     description: "Celebrating Nigel! Special dinner out together.",
     category: "birthday",
     isHighlight: true,
-    isMandatory: true,
+    treatLabel: "Mum & Dad's treat",
   },
 
   // Saturday — Boat Tour & Birthday
@@ -99,10 +97,9 @@ export const itinerary: ItineraryEvent[] = [
     day: "sat",
     time: "Morning",
     title: "Leisurely morning",
-    description: "Sleep in, no rush. Coffee and pastries when ready.",
-    example: "Godt Brød for cinnamon buns, or coffee at the house",
+    description: "Sleep in, no rush. Coffee at the house or head out somewhere.",
+    example: "Godt Brød for cinnamon buns",
     category: "coffee",
-    choices: ["Make something at home", "Head out"],
   },
   {
     id: "sat-boat",
@@ -112,7 +109,7 @@ export const itinerary: ItineraryEvent[] = [
     description: "Take the Mostraumen fjord cruise — stunning scenery through narrow straits and waterfalls",
     locationId: "mostraumen",
     category: "activity",
-    isMandatory: true,
+    treatLabel: "Treating Mum & Dad",
   },
   {
     id: "sat-free",
@@ -130,7 +127,7 @@ export const itinerary: ItineraryEvent[] = [
     description: "The big celebration! Special dinner out to celebrate Euan.",
     category: "birthday",
     isHighlight: true,
-    isMandatory: true,
+    treatLabel: "Mum & Dad's treat",
   },
 
   // Sunday — Sauna & Explore
@@ -139,7 +136,7 @@ export const itinerary: ItineraryEvent[] = [
     day: "sun",
     time: "Morning",
     title: "Coffee",
-    description: "Start the day right",
+    description: "Make coffee at home or find a coffee spot in town",
     example: "Blom, Kippers, or Dromedar",
     category: "coffee",
   },
@@ -156,10 +153,9 @@ export const itinerary: ItineraryEvent[] = [
     day: "sun",
     time: "Lunchtime",
     title: "Lunch",
-    description: "Refuel after the sauna",
+    description: "Make something at home or head out",
     example: "Zupperia, Trekroneren, or Lysverket lunch",
     category: "lunch",
-    choices: ["Make something at home", "Head out"],
   },
   {
     id: "sun-3",
@@ -174,8 +170,8 @@ export const itinerary: ItineraryEvent[] = [
     id: "sun-4",
     day: "sun",
     time: "Evening",
-    title: "Dinner out",
-    description: "Last dinner in Bergen",
+    title: "Evening meal",
+    description: "Cook at home or head out — whatever we fancy on the day",
     category: "dinner",
   },
 
@@ -185,10 +181,9 @@ export const itinerary: ItineraryEvent[] = [
     day: "mon",
     time: "Morning",
     title: "Pack up & breakfast",
-    description: "Final breakfast at the house, pack up",
+    description: "Make something at home or head out — then pack up",
     locationId: "airbnb",
     category: "accommodation",
-    choices: ["Make something at home", "Head out"],
   },
   {
     id: "mon-2",

@@ -10,6 +10,8 @@ export interface ItineraryEvent {
   locationId?: string;
   category: Category;
   isHighlight?: boolean;
+  isMandatory?: boolean;
+  choices?: string[];
 }
 
 export const itinerary: ItineraryEvent[] = [
@@ -69,6 +71,7 @@ export const itinerary: ItineraryEvent[] = [
     description: "Grab lunch somewhere in the city",
     example: "Fish Market, Pingvinen, or Bryggeloftet",
     category: "lunch",
+    choices: ["Make something at home", "Head out"],
   },
   {
     id: "fri-4",
@@ -83,12 +86,14 @@ export const itinerary: ItineraryEvent[] = [
     id: "fri-5",
     day: "fri",
     time: "Evening",
-    title: "Dinner out",
-    description: "First dinner out in Bergen",
-    category: "dinner",
+    title: "Nigel's birthday dinner",
+    description: "Celebrating Nigel! Special dinner out together.",
+    category: "birthday",
+    isHighlight: true,
+    isMandatory: true,
   },
 
-  // Saturday — Sauna & Birthday
+  // Saturday — Boat Tour & Birthday
   {
     id: "sat-1",
     day: "sat",
@@ -97,17 +102,20 @@ export const itinerary: ItineraryEvent[] = [
     description: "Sleep in, no rush. Coffee and pastries when ready.",
     example: "Godt Brød for cinnamon buns, or coffee at the house",
     category: "coffee",
+    choices: ["Make something at home", "Head out"],
   },
   {
-    id: "sat-2",
+    id: "sat-boat",
     day: "sat",
-    time: "Late morning",
-    title: "Sauna session",
-    description: "Relax and warm up with a proper Nordic sauna experience",
+    time: "Morning",
+    title: "Fjord boat tour",
+    description: "Take the Mostraumen fjord cruise — stunning scenery through narrow straits and waterfalls",
+    locationId: "mostraumen",
     category: "activity",
+    isMandatory: true,
   },
   {
-    id: "sat-3",
+    id: "sat-free",
     day: "sat",
     time: "Afternoon",
     title: "Free time",
@@ -118,13 +126,14 @@ export const itinerary: ItineraryEvent[] = [
     id: "sat-4",
     day: "sat",
     time: "Evening",
-    title: "Birthday dinner",
-    description: "The big celebration! Special dinner out to celebrate.",
+    title: "Euan's birthday dinner",
+    description: "The big celebration! Special dinner out to celebrate Euan.",
     category: "birthday",
     isHighlight: true,
+    isMandatory: true,
   },
 
-  // Sunday — Boat Tour
+  // Sunday — Sauna & Explore
   {
     id: "sun-1",
     day: "sun",
@@ -135,25 +144,25 @@ export const itinerary: ItineraryEvent[] = [
     category: "coffee",
   },
   {
-    id: "sun-2",
+    id: "sun-sauna",
     day: "sun",
-    time: "Morning",
-    title: "Fjord boat tour",
-    description: "Take the Mostraumen fjord cruise — stunning scenery through narrow straits and waterfalls",
-    locationId: "mostraumen",
+    time: "Late morning",
+    title: "Sauna session",
+    description: "Relax and warm up with a proper Nordic sauna experience",
     category: "activity",
   },
   {
-    id: "sun-3",
+    id: "sun-2",
     day: "sun",
     time: "Lunchtime",
     title: "Lunch",
-    description: "Refuel after the cruise",
+    description: "Refuel after the sauna",
     example: "Zupperia, Trekroneren, or Lysverket lunch",
     category: "lunch",
+    choices: ["Make something at home", "Head out"],
   },
   {
-    id: "sun-4",
+    id: "sun-3",
     day: "sun",
     time: "Afternoon",
     title: "Free afternoon",
@@ -162,7 +171,7 @@ export const itinerary: ItineraryEvent[] = [
     category: "activity",
   },
   {
-    id: "sun-5",
+    id: "sun-4",
     day: "sun",
     time: "Evening",
     title: "Dinner out",
@@ -179,6 +188,7 @@ export const itinerary: ItineraryEvent[] = [
     description: "Final breakfast at the house, pack up",
     locationId: "airbnb",
     category: "accommodation",
+    choices: ["Make something at home", "Head out"],
   },
   {
     id: "mon-2",

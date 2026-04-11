@@ -109,7 +109,6 @@ export const itinerary: ItineraryEvent[] = [
     description: "Take the Mostraumen fjord cruise — stunning scenery through narrow straits and waterfalls",
     locationId: "mostraumen",
     category: "activity",
-    treatLabel: "Treating Mum & Dad",
   },
   {
     id: "sat-free",

@@ -84,11 +84,9 @@ export const itinerary: ItineraryEvent[] = [
     id: "fri-5",
     day: "fri",
     time: "Evening",
-    title: "Nigel's birthday dinner",
-    description: "Celebrating Nigel! Special dinner out together.",
-    category: "birthday",
-    isHighlight: true,
-    treatLabel: "Mum & Dad's treat",
+    title: "Dinner",
+    description: "Head out for dinner or cook something at home — see what we feel like",
+    category: "dinner",
   },
 
   // Saturday — Boat Tour & Birthday

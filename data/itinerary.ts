@@ -38,7 +38,7 @@ export const itinerary: ItineraryEvent[] = [
     day: "thu",
     time: "Evening",
     title: "Cook together at the house",
-    description: "First night in — pick up groceries and cook a meal together. Chill vibes. You and Kate will cook together on the first night.",
+    description: "First night in — Euan and Kate are on cooking duty. Pick up groceries and cook a meal together. Chill vibes.",
     locationId: "airbnb",
     category: "accommodation",
   },

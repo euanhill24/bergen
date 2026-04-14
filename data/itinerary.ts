@@ -102,7 +102,7 @@ export const itinerary: ItineraryEvent[] = [
   {
     id: "sat-boat",
     day: "sat",
-    time: "Morning",
+    time: "10:30",
     title: "Fjord boat tour",
     description: "Take the Mostraumen fjord cruise — stunning scenery through narrow straits and waterfalls",
     locationId: "mostraumen",

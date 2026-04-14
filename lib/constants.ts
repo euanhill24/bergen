@@ -75,8 +75,8 @@ export const tripDays: {
     date: "2026-04-17",
     label: "Friday",
     shortLabel: "Fri 17",
-    title: "Explore & Birthday",
-    subtitle: "First proper day — Nigel's birthday dinner",
+    title: "Explore & Funicular",
+    subtitle: "First proper day in Bergen",
   },
   {
     id: "sat",
